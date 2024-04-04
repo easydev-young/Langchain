@@ -165,4 +165,9 @@ if openai_api_key:
 else:
     st.session_state["openai_api_key"] =""
 
-st.sidebar.markdown("git")
+st.sidebar.markdown(
+    """
+    GitHub : https://github.com/easydev-young/Langchain/blob/Assignment15/app.py
+
+    """
+)
