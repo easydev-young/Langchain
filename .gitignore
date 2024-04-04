@@ -1,5 +1,6 @@
 env/
 .env
-note.txt
+note/
 files/
 .cache/
+.streamlit/
