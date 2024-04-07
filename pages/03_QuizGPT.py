@@ -110,18 +110,7 @@ with st.sidebar:
     )
                     
 
-llm = ChatOpenAI(
-    temperature=0.1,
-    model="gpt-3.5-turbo-1106",
-    streaming=True,
-    callbacks=[StreamingStdOutCallbackHandler()],
-    openai_api_key=openai_api_key,
-).bind(
-    function_call="auto",
-    functions=[
-        function,
-    ],
-)
+
 
 if not level:
     st.markdown(
@@ -131,6 +120,19 @@ if not level:
     )
 
 if openai_api_key and topic and level:
+    llm = ChatOpenAI(
+        temperature=0.1,
+        model="gpt-3.5-turbo-1106",
+        streaming=True,
+        callbacks=[StreamingStdOutCallbackHandler()],
+        openai_api_key=openai_api_key,
+    ).bind(
+        function_call="auto",
+        functions=[
+            function,
+        ],
+    )
+        
     response = run_quiz_chain(topic, level)
     response = response.additional_kwargs["function_call"]["arguments"]
     response = json.loads(response)
