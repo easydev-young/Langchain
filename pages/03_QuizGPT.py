@@ -160,3 +160,11 @@ if openai_api_key and topic and level:
     st.write(f"정답: {num_correct}, 오답: {num_incorrect}")
     if num_correct == quiz_count:
         st.balloons()
+
+
+st.sidebar.markdown(
+    """
+    GitHub : https://github.com/easydev-young/Langchain/blob/Assignment16/pages/03_QuizGPT.py
+
+    """
+)
