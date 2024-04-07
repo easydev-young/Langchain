@@ -84,11 +84,9 @@ st.title("DocumentGPT")
 
 st.markdown(
     """
-Welcome!
-            
-Use this chatbot to ask questions to an AI about your files!
+이 챗봇을 사용하여 AI에게 파일에 대해 질문하세요! 
 
-Upload your files on the sidebar.
+사이드바에 파일을 업로드하세요.
 """
 )
 
