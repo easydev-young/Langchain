@@ -39,7 +39,7 @@ llm = ChatOpenAI(
     temperature=0.1,
     streaming=True,
     callbacks=[StreamingStdOutCallbackHandler()],
-    openai_api_key=openai_api_key,
+    openai_api_key=openai_api_key if openai_api_key else "_",
 )
 
 answers_prompt = ChatPromptTemplate.from_template(
@@ -99,7 +99,7 @@ choose_prompt = ChatPromptTemplate.from_messages(
 
             Use the answers that have the highest score (more helpful) and favor the most recent ones.
 
-            Be sure to cite the source and return the source as is in your answer, do not change it.
+            If the score is 1 or higher, be sure to cite the source and return the source as it is in your answer, do not change it.
 
             Answers: {answers}
             """,
