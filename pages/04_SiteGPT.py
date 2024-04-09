@@ -101,6 +101,8 @@ choose_prompt = ChatPromptTemplate.from_messages(
 
             If the score is 1 or higher, be sure to cite the source and return the source as it is in your answer, do not change it.
 
+            If your score is 0, never cite the source.
+            
             Answers: {answers}
             """,
         ),
