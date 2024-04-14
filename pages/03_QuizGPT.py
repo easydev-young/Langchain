@@ -1,5 +1,5 @@
 import json
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.callbacks import StreamingStdOutCallbackHandler
 import streamlit as st
@@ -70,7 +70,7 @@ questions_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-@st.cache_data(show_spinner="Making quiz...")
+@st.cache_resource(show_spinner="Making quiz...")
 def run_quiz_chain(topic, level):
     chain = questions_prompt | llm
     return chain.invoke({

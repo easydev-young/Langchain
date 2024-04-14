@@ -1,9 +1,9 @@
-from langchain.document_loaders import SitemapLoader
+from langchain_community.document_loaders import SitemapLoader
 from langchain.schema.runnable import RunnableLambda, RunnablePassthrough
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores.faiss import FAISS
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.callbacks import StreamingStdOutCallbackHandler
 import streamlit as st
@@ -142,7 +142,7 @@ def parse_page(soup):
     )
 
 
-@st.cache_data(show_spinner="Loading Cloudflare...")
+@st.cache_resource(show_spinner="Loading Cloudflare...")
 def load_website(url):
     splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
         chunk_size=1000,

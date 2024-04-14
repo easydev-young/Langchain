@@ -1,0 +1,13 @@
+XZ Backdoor Research:
+
+DuckDuckGo Search Results:
+- Malicious code added to xz Utils versions 5.6.0 and 5.6.1 modified the way the software functions. The backdoor manipulated sshd, the executable file used to make remote connections.
+- Threat actors added a backdoor to the XZ utility versions 5.6.0 and 5.6.1, manipulating the sshd server process.
+
+Wikipedia Search Results:
+- On 29 March 2024, software developer Andres Freund reported a malicious backdoor in the Linux utility xz within the liblzma library in versions 5.6.0 and 5.6.1.
+- The backdoor gives an attacker remote code execution capabilities on the affected Linux system.
+- XZ Utils is a set of free software command-line lossless data compressors, including lzma and xz, for Unix-like operating systems.
+- A backdoor is a covert method of bypassing normal authentication or encryption in a computer, product, or embedded device.
+
+For more details, refer to the DuckDuckGo and Wikipedia search results.
